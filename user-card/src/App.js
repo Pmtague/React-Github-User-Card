@@ -34,29 +34,29 @@ class App extends React.Component {
       })
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log('CDU Running!');
-    console.log('Prev Props!', prevProps);
-    console.log('Prev State!', prevState);
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log('CDU Running!');
+  //   console.log('Prev Props!', prevProps);
+  //   console.log('Prev State!', prevState);
 
-    if (this.props.userID !== prevProps.userID) {
-      console.log('Never will run!');
-      this.fetchData(this.props.userID)
-    }
+  //   if (this.props.userID !== prevProps.userID) {
+  //     console.log('Never will run!');
+  //     this.fetchData(this.props.userID)
+  //   }
 
-    if(prevState !== this.state.userInfo) {
-      console.log('Change in state!')
-    }
+  //   if(prevState !== this.state.userInfo) {
+  //     console.log('Change in state!')
+  //   }
 
-    if (this.props.userID !== prevProps.userID) {
-      console.log('Never will run!');
-      this.fetchData(this.props.userID)
-    }
+  //   if (this.props.userID !== prevProps.userID) {
+  //     console.log('Never will run!');
+  //     this.fetchData(this.props.userID)
+  //   }
 
-    if(prevState !== this.state.followers) {
-      console.log('Change in follower state!')
-    }
-  }
+  //   if(prevState !== this.state.followers) {
+  //     console.log('Change in follower state!')
+  //   }
+  // }
 
   render() {
     return (

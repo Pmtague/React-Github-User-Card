@@ -21,7 +21,7 @@ const UserCard = props => {
             <p>Following: { props.following }</p>
             <p>Followers: { props.followers.map(item => (
                 <div key={ item } className='followers-list'>
-                    { item }
+                    { item.login }
                 </div>
             )) }</p>
         </Wrapper>
