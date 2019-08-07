@@ -19,7 +19,7 @@ class App extends React.Component {
       .then(info => this.setState({ userInfo: info}))
 
       .catch(err => {
-        console.log('Oh no, an error!', err)
+        console.log('Pmtague data error!', err)
       })
     
     fetch('https://api.github.com/users/Pmtague/followers')
@@ -30,33 +30,33 @@ class App extends React.Component {
       .then(data => this.setState({ followers: data }))
 
       .catch(err => {
-        console.log('Oopsie whoopsie!', err)
+        console.log('Followers dara error!', err)
       })
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   console.log('CDU Running!');
-  //   console.log('Prev Props!', prevProps);
-  //   console.log('Prev State!', prevState);
+  componentDidUpdate(prevProps, prevState) {
+    console.log('CDU Running!');
+    console.log('Prev Props!', prevProps);
+    console.log('Prev State!', prevState);
 
-  //   if (this.props.userID !== prevProps.userID) {
-  //     console.log('Never will run!');
-  //     this.fetchData(this.props.userID)
-  //   }
+    if (this.props.userID !== prevProps.userID) {
+      console.log('Never will run!');
+      this.fetchData(this.props.userID)
+    }
 
-  //   if(prevState !== this.state.userInfo) {
-  //     console.log('Change in state!')
-  //   }
+    if(prevState !== this.state.userInfo) {
+      console.log('Change in state!')
+    }
 
-  //   if (this.props.userID !== prevProps.userID) {
-  //     console.log('Never will run!');
-  //     this.fetchData(this.props.userID)
-  //   }
+    if (this.props.userID !== prevProps.userID) {
+      console.log('Never will run!');
+      this.fetchData(this.props.userID)
+    }
 
-  //   if(prevState !== this.state.followers) {
-  //     console.log('Change in follower state!')
-  //   }
-  // }
+    if(prevState !== this.state.followers) {
+      console.log('Change in follower state!')
+    }
+  }
 
   render() {
     return (
@@ -69,6 +69,7 @@ class App extends React.Component {
             repos={ this.state.userInfo.public_repos }
             following={ this.state.userInfo.following }
             followers={ this.state.followers }
+            avatar={ this.state.userInfo.avatar_url }
         />
       </div>
     );
